@@ -30,7 +30,7 @@ pipeline {
                         SSH = "ssh -tt -i /home/ubuntu/C51.pem ubuntu@13.235.133.96"
                     }
                     steps{
-                        sh "$SSH 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 584716546011.dkr.ecr.ap-south-1.amazonaws.com; docker pull docker push 584716546011.dkr.ecr.ap-south-1.amazonaws.com/vote:v${BUILD_NUMBER}'"
+                        sh "$SSH 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 584716546011.dkr.ecr.ap-south-1.amazonaws.com; docker pull 584716546011.dkr.ecr.ap-south-1.amazonaws.com/vote:v${BUILD_NUMBER}'"
                     }
                 }
                 stage("QA Deployment"){
