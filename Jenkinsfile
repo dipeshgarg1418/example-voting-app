@@ -17,7 +17,7 @@ pipeline {
                 sh '''
                 cd vote
                 aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 584716546011.dkr.ecr.ap-south-1.amazonaws.com
-                docker build -t 584716546011.dkr.ecr.ap-south-1.amazonaws.com/vote:v${BUILD_NUMBER}
+                docker build -t 584716546011.dkr.ecr.ap-south-1.amazonaws.com/vote:v${BUILD_NUMBER} .
                 docker push 584716546011.dkr.ecr.ap-south-1.amazonaws.com/vote:v${BUILD_NUMBER}
                 '''
             }
